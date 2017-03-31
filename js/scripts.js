@@ -51,8 +51,8 @@ function newGame() {
 	if (player.name) {
 		player.score = computer.score = 0;
 		gameState = 'started';
+		reset();
 		setGameElements();
-		setGamePoints();
 		playerNameElem.innerHTML = player.name;
 	}
 }
@@ -98,6 +98,14 @@ function checkRoundWinner(playerPick, computerPick) {
 		computerResultElem.innerHTML = "Wygrana!";
 		computer.score++;
 	}
+}
+
+function reset() {
+	setGamePoints();
+	playerResultElem.innerHTML = "Wynik gracza";
+	computerResultElem.innerHTML = "Wynik komputera";
+	playerPickElem.innerHTML = "Wybór gracza";
+	computerPickElem.innerHTML = "Wybór komputera";
 }
 
 function setGamePoints() {
